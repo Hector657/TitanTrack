@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TitanTrack</string>
+    <string name="brand_name">TITANTRACK</string>
+    <string name="brand_tagline">FITNESS SOLUTIONS</string>
+
+    <string name="login_title">Iniciar sesión</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="btn_login">ENTRAR</string>
+    <string name="go_register">¿No tienes cuenta? Regístrate</string>
+
+    <string name="register_title">Crear cuenta</string>
+    <string name="hint_name">Nombre completo</string>
+    <string name="hint_confirm">Repite la contraseña</string>
+    <string name="btn_register">REGISTRARME</string>
+    <string name="go_login">¿Ya tienes cuenta? Inicia sesión</string>
 </resources>

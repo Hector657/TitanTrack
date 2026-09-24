@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="titan_background">#0F2440</color>
+    <color name="titan_surface">#1B3555</color>
+    <color name="titan_primary">#1E88E5</color>
+    <color name="titan_accent">#00E676</color>
+    <color name="titan_text">#FFFFFF</color>
+    <color name="titan_text_muted">#9FB3C8</color>
+    <color name="titan_button_text">#0F2440</color>
+    <color name="titan_field_stroke">#2E4A6B</color>
 </resources>
