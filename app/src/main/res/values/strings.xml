@@ -14,4 +14,11 @@
     <string name="hint_confirm">Repite la contraseña</string>
     <string name="btn_register">REGISTRARME</string>
     <string name="go_login">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_workouts">Entrenos</string>
+    <string name="nav_profile">Perfil</string>
+    <string name="dashboard_home">Bienvenido a TitanTrack</string>
+    <string name="dashboard_workouts">Tus entrenamientos</string>
+    <string name="dashboard_profile">Tu perfil</string>
+    <string name="btn_register_action">Crear cuenta</string>S
 </resources>
