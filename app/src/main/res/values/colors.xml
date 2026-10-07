@@ -8,4 +8,9 @@
     <color name="titan_text_muted">#9FB3C8</color>
     <color name="titan_button_text">#0F2440</color>
     <color name="titan_field_stroke">#2E4A6B</color>
+    <color name="titan_card">#17304F</color>
+    <color name="titan_chip">#13385C</color>
+    <color name="level_beginner">#00E676</color>
+    <color name="level_intermediate">#FFC107</color>
+    <color name="level_advanced">#FF5252</color>
 </resources>

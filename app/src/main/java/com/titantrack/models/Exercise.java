@@ -1,0 +1,20 @@
+package com.titantrack.models;
+
+public class Exercise {
+    private final String name;
+    private final String muscleGroup;
+    private final String level;
+    private final int durationMin;
+
+    public Exercise(String name, String muscleGroup, String level, int durationMin) {
+        this.name = name;
+        this.muscleGroup = muscleGroup;
+        this.level = level;
+        this.durationMin = durationMin;
+    }
+
+    public String getName() { return name; }
+    public String getMuscleGroup() { return muscleGroup; }
+    public String getLevel() { return level; }
+    public int getDurationMin() { return durationMin; }
+}
