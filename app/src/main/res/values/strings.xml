@@ -22,4 +22,5 @@
     <string name="dashboard_profile">Tu perfil</string>
     <string name="btn_register_action">Crear cuenta</string>
     <string name="catalog_title">Catálogo de ejercicios</string>
+    <string name="btn_logout">Cerrar sesión</string>
 </resources>
