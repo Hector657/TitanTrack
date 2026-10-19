@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">TitanTrack</string>
+
     <string name="brand_name">TITANTRACK</string>
     <string name="brand_tagline">FITNESS SOLUTIONS</string>
 
@@ -14,6 +15,7 @@
     <string name="hint_confirm">Repite la contraseña</string>
     <string name="btn_register">REGISTRARME</string>
     <string name="go_login">¿Ya tienes cuenta? Inicia sesión</string>
+
     <string name="nav_home">Inicio</string>
     <string name="nav_workouts">Entrenos</string>
     <string name="nav_profile">Perfil</string>
@@ -21,6 +23,16 @@
     <string name="dashboard_workouts">Tus entrenamientos</string>
     <string name="dashboard_profile">Tu perfil</string>
     <string name="btn_register_action">Crear cuenta</string>
+
     <string name="catalog_title">Catálogo de ejercicios</string>
+
     <string name="btn_logout">Cerrar sesión</string>
+
+    <string name="training_title">Modo Entrenamiento</string>
+    <string name="hint_kg">Peso (kg)</string>
+    <string name="hint_reps">Repeticiones</string>
+    <string name="hint_rest">Descanso (s)</string>
+    <string name="btn_add_series">Registrar serie</string>
+    <string name="btn_start_rest">Iniciar descanso</string>
+    <string name="series_header">Series registradas</string>
 </resources>

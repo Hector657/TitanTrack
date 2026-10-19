@@ -13,4 +13,5 @@
     <color name="level_beginner">#00E676</color>
     <color name="level_intermediate">#FFC107</color>
     <color name="level_advanced">#FF5252</color>
+    <color name="titan_timer">#00E676</color>
 </resources>

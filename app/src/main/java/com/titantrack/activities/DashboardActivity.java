@@ -80,7 +80,9 @@ public class DashboardActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-
+        com.google.android.material.button.MaterialButton btnTraining = findViewById(R.id.btnTraining);
+        btnTraining.setOnClickListener(v ->
+                startActivity(new android.content.Intent(DashboardActivity.this, TrainingActivity.class)));
         bottomNav.setSelectedItemId(R.id.nav_workouts);
     }
 }
