@@ -1,5 +1,6 @@
 package com.titantrack.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.TextUtils;
@@ -16,7 +17,10 @@ import com.google.android.material.button.MaterialButton;
 import com.titantrack.R;
 import com.titantrack.adapters.SeriesAdapter;
 import com.titantrack.models.SeriesRecord;
+import com.titantrack.utils.TrainingDbHelper;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -24,12 +28,13 @@ public class TrainingActivity extends AppCompatActivity {
 
     private TextView txtTimer;
     private Spinner spinnerExercise;
-    private MaterialButton btnStartRest, btnAddSeries;
+    private MaterialButton btnStartRest, btnAddSeries, btnFinish;
     private EditText inputKg, inputReps, inputRest;
     private CountDownTimer countDownTimer;
 
     private final List<SeriesRecord> seriesList = new ArrayList<>();
     private SeriesAdapter adapter;
+    private TrainingDbHelper dbHelper;
 
     private final String[] ejercicios = {
             "Press de banca", "Sentadilla", "Peso muerto", "Press militar",
@@ -42,11 +47,14 @@ public class TrainingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
+        dbHelper = new TrainingDbHelper(this);
+
         ImageButton btnBack = findViewById(R.id.btnBack);
         txtTimer = findViewById(R.id.txtTimer);
         spinnerExercise = findViewById(R.id.spinnerExercise);
         btnStartRest = findViewById(R.id.btnStartRest);
         btnAddSeries = findViewById(R.id.btnAddSeries);
+        btnFinish = findViewById(R.id.btnFinish);
         inputKg = findViewById(R.id.inputKg);
         inputReps = findViewById(R.id.inputReps);
         inputRest = findViewById(R.id.inputRest);
@@ -63,6 +71,7 @@ public class TrainingActivity extends AppCompatActivity {
         adapter = new SeriesAdapter(seriesList);
         recycler.setAdapter(adapter);
 
+        // Registrar serie (en memoria)
         btnAddSeries.setOnClickListener(v -> {
             String kgStr = inputKg.getText().toString().trim();
             String repsStr = inputReps.getText().toString().trim();
@@ -92,10 +101,27 @@ public class TrainingActivity extends AppCompatActivity {
         });
 
         btnStartRest.setOnClickListener(v -> startRestTimer());
+
+        // Finalizar y guardar la sesión en disco (SQLite)
+        btnFinish.setOnClickListener(v -> {
+            if (seriesList.isEmpty()) {
+                Toast.makeText(this, "No hay series que guardar", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            String fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
+                    .format(new Date());
+            for (SeriesRecord s : seriesList) {
+                dbHelper.insertarSerie(s.getEjercicio(), s.getKg(), s.getReps(), fecha);
+            }
+            Toast.makeText(this, "Sesión guardada (" + seriesList.size() + " series)",
+                    Toast.LENGTH_LONG).show();
+            // Ir al historial
+            startActivity(new Intent(this, HistoryActivity.class));
+            finish();
+        });
     }
 
     private void startRestTimer() {
-        // Lee el descanso que haya puesto el usuario (por defecto 30s)
         long restSeconds = 30;
         String restStr = inputRest.getText().toString().trim();
         if (!TextUtils.isEmpty(restStr)) {

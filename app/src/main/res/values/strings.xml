@@ -35,4 +35,7 @@
     <string name="btn_add_series">Registrar serie</string>
     <string name="btn_start_rest">Iniciar descanso</string>
     <string name="series_header">Series registradas</string>
+    <string name="btn_finish_session">Finalizar y guardar sesión</string>
+    <string name="history_title">Historial de entrenamientos</string>
+    <string name="history_empty">Aún no hay entrenamientos guardados</string>
 </resources>

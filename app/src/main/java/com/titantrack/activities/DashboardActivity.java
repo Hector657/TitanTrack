@@ -84,5 +84,10 @@ public class DashboardActivity extends AppCompatActivity {
         btnTraining.setOnClickListener(v ->
                 startActivity(new android.content.Intent(DashboardActivity.this, TrainingActivity.class)));
         bottomNav.setSelectedItemId(R.id.nav_workouts);
+        btnTraining.setOnLongClickListener(v -> {
+            startActivity(new android.content.Intent(DashboardActivity.this, HistoryActivity.class));
+            return true;
+        });
     }
+
 }
