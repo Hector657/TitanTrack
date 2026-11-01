@@ -14,7 +14,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="14dp">
+
+        <ImageView
+            android:id="@+id/imgExercise"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            android:background="@color/titan_chip"
+            android:contentDescription="@string/catalog_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:id="@+id/txtName"
@@ -23,8 +34,9 @@
             android:textColor="@color/titan_text"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="14dp"
+            app:layout_constraintTop_toTopOf="@id/imgExercise"
+            app:layout_constraintStart_toEndOf="@id/imgExercise"
             app:layout_constraintEnd_toStartOf="@id/txtLevel"
             tools:text="Press de banca" />
 
@@ -38,7 +50,7 @@
             android:textColor="@color/titan_accent"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgExercise"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="Intermedio" />
 
@@ -48,9 +60,10 @@
             android:layout_height="wrap_content"
             android:textColor="@color/titan_text_muted"
             android:textSize="14sp"
+            android:layout_marginStart="14dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/txtName"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgExercise"
             tools:text="Pecho" />
 
         <TextView
@@ -59,9 +72,10 @@
             android:layout_height="wrap_content"
             android:textColor="@color/titan_text_muted"
             android:textSize="14sp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
             app:layout_constraintTop_toBottomOf="@id/txtMuscle"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgExercise"
             tools:text="20 min" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
